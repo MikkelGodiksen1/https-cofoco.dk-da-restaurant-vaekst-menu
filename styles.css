@@ -1,22 +1,27 @@
-/* ===== Variables & Reset ===== */
+/* ===== Fonts ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+/* ===== Variables ===== */
 :root {
-  --color-bg: #0f1a0f;
-  --color-bg-alt: #162016;
-  --color-surface: #1a2a1a;
-  --color-surface-light: #243424;
-  --color-green: #4a7c59;
-  --color-green-light: #6ba37a;
-  --color-gold: #c9a96e;
-  --color-gold-light: #dfc28e;
-  --color-text: #e8e4df;
-  --color-text-muted: #a09a90;
-  --color-wine: #b08968;
-  --color-separator: #3a4a3a;
-  --font-display: 'Georgia', 'Times New Roman', serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --max-width: 900px;
+  --bg: #faf9f7;
+  --bg-warm: #f4f1ec;
+  --surface: #ffffff;
+  --border: #e8e4de;
+  --border-light: #f0ece6;
+  --text: #1a1a18;
+  --text-secondary: #6b6560;
+  --text-tertiary: #9a948d;
+  --accent: #8b7355;
+  --accent-hover: #725e44;
+  --green-subtle: #5a7a5a;
+  --wine-color: #8b6f5c;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --max-w: 780px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* ===== Reset ===== */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -25,23 +30,27 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
   font-family: var(--font-body);
-  background: var(--color-bg);
-  color: var(--color-text);
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
 }
 
 a {
-  color: var(--color-gold);
+  color: var(--accent);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color var(--transition);
 }
 
 a:hover {
-  color: var(--color-gold-light);
+  color: var(--accent-hover);
 }
 
 /* ===== Navbar ===== */
@@ -51,47 +60,69 @@ a:hover {
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(15, 26, 15, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--color-separator);
+  background: transparent;
+  transition: all 0.5s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(250, 249, 247, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 var(--border);
 }
 
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 64px;
+  height: 72px;
 }
 
 .nav-logo {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  color: var(--color-gold);
-  letter-spacing: 0.1em;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  transition: color 0.5s ease;
+}
+
+.navbar.scrolled .nav-logo {
+  color: var(--text);
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 28px;
+  gap: 36px;
   align-items: center;
 }
 
-.nav-links a {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
+.nav-links > li > a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 0.2s;
+  transition: color 0.5s ease;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  color: var(--color-gold);
+.navbar.scrolled .nav-links > li > a {
+  color: var(--text-secondary);
+}
+
+.nav-links > li > a:hover,
+.nav-links > li > a.active {
+  color: #fff;
+}
+
+.navbar.scrolled .nav-links > li > a:hover,
+.navbar.scrolled .nav-links > li > a.active {
+  color: var(--text);
 }
 
 /* Dropdown */
@@ -102,15 +133,14 @@ a:hover {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;
-  right: 0;
-  background: var(--color-surface);
-  border: 1px solid var(--color-separator);
-  border-radius: 4px;
-  padding: 8px 0;
-  min-width: 240px;
+  top: calc(100% + 12px);
+  right: -20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 12px 0;
+  min-width: 260px;
   list-style: none;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
 }
 
 .nav-dropdown:hover .dropdown-menu {
@@ -119,42 +149,69 @@ a:hover {
 
 .dropdown-menu li a {
   display: block;
-  padding: 8px 20px;
-  font-size: 0.85rem;
+  padding: 9px 28px;
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
   text-transform: none;
 }
 
 .dropdown-menu li a:hover {
-  background: var(--color-bg-alt);
+  color: var(--text);
+  background: var(--bg-warm);
+}
+
+.dropdown-menu li a.active {
+  color: var(--text);
+  font-weight: 400;
 }
 
 /* Mobile toggle */
 .nav-toggle {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
+  width: 32px;
 }
 
 .nav-toggle span {
-  width: 24px;
-  height: 2px;
-  background: var(--color-text);
-  transition: 0.3s;
+  width: 100%;
+  height: 1px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .nav-toggle span {
+  background: var(--text);
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* ===== Hero ===== */
 .hero {
   position: relative;
   height: 100vh;
-  min-height: 600px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #111;
 }
 
 .hero-video {
@@ -163,116 +220,128 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  opacity: 0.7;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    to bottom,
-    rgba(15, 26, 15, 0.4) 0%,
-    rgba(15, 26, 15, 0.6) 50%,
-    rgba(15, 26, 15, 0.9) 100%
+    180deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.3) 60%,
+    rgba(0, 0, 0, 0.55) 100%
   );
 }
 
 .hero-content {
   position: relative;
   text-align: center;
-  max-width: 680px;
-  padding: 0 24px;
+  max-width: 600px;
+  padding: 0 32px;
 }
 
 .hero-content h1 {
   font-family: var(--font-display);
-  font-size: 4rem;
-  font-weight: 400;
-  color: var(--color-gold);
-  letter-spacing: 0.15em;
+  font-size: 5.5rem;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+  line-height: 1;
 }
 
 .hero-content p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--color-text);
-  margin-bottom: 32px;
-  opacity: 0.9;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 40px;
+  letter-spacing: 0.02em;
 }
 
 .btn {
   display: inline-block;
-  padding: 14px 40px;
-  background: var(--color-gold);
-  color: var(--color-bg);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  padding: 16px 48px;
+  background: transparent;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: none;
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
+  transition: all var(--transition);
 }
 
 .btn:hover {
-  background: var(--color-gold-light);
-  color: var(--color-bg);
-  transform: translateY(-1px);
+  background: #fff;
+  color: var(--text);
+  border-color: #fff;
+}
+
+.btn-dark {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+.btn-dark:hover {
+  background: var(--text);
+  color: #fff;
 }
 
 /* ===== Menu Section ===== */
 .menu-section {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 120px 32px;
 }
 
 .menu-section > h2 {
   font-family: var(--font-display);
-  font-size: 2.2rem;
-  font-weight: 400;
+  font-size: 2.8rem;
+  font-weight: 300;
   text-align: center;
-  color: var(--color-gold);
-  letter-spacing: 0.08em;
-  margin-bottom: 40px;
+  color: var(--text);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 60px;
 }
 
 /* Tabs */
 .menu-tabs {
   display: flex;
   justify-content: center;
-  gap: 4px;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 64px;
+  border-bottom: 1px solid var(--border);
 }
 
 .menu-tab {
-  padding: 12px 28px;
+  padding: 16px 32px;
   background: transparent;
-  color: var(--color-text-muted);
-  border: 1px solid var(--color-separator);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
+  color: var(--text-tertiary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.2s;
-  font-family: var(--font-body);
+  transition: all var(--transition);
+  margin-bottom: -1px;
 }
 
-.menu-tab:first-child { border-radius: 4px 0 0 4px; }
-.menu-tab:last-child { border-radius: 0 4px 4px 0; }
-
 .menu-tab:hover {
-  color: var(--color-text);
-  background: var(--color-surface);
+  color: var(--text-secondary);
 }
 
 .menu-tab.active {
-  background: var(--color-green);
-  color: #fff;
-  border-color: var(--color-green);
+  color: var(--text);
+  border-bottom-color: var(--text);
 }
 
 /* Menu content */
@@ -286,49 +355,57 @@ a:hover {
 
 .menu-date {
   text-align: center;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  font-style: italic;
-  margin-bottom: 40px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  margin-bottom: 56px;
 }
 
 /* Menu cards */
 .menu-card {
-  background: var(--color-surface);
-  border: 1px solid var(--color-separator);
-  border-radius: 6px;
-  padding: 40px 36px;
-  margin-bottom: 32px;
+  background: var(--surface);
+  padding: 56px 48px;
+  margin-bottom: 40px;
+  border: 1px solid var(--border-light);
 }
 
 .menu-card h3 {
   font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: var(--color-gold);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--text);
   text-align: center;
-  margin-bottom: 28px;
-  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+  letter-spacing: 0.06em;
 }
 
 .menu-card h4 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   font-weight: 400;
-  color: var(--color-green-light);
+  color: var(--text);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-top: 24px;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 1px solid var(--color-separator);
+  letter-spacing: 0.12em;
+  margin-top: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.menu-card h4::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  margin: 12px auto 0;
 }
 
 .menu-items {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .menu-item {
@@ -338,60 +415,78 @@ a:hover {
 
 .menu-item .dish {
   display: block;
-  font-size: 1rem;
-  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.5;
 }
 
 .menu-item .supplement {
   display: block;
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  font-style: italic;
-  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-tertiary);
+  letter-spacing: 0.02em;
+  margin-top: 3px;
 }
 
 .menu-item .wine {
   display: block;
-  font-size: 0.85rem;
-  color: var(--color-wine);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 300;
   font-style: italic;
-  margin-top: 4px;
+  color: var(--wine-color);
+  margin-top: 6px;
 }
 
 .menu-separator {
-  color: var(--color-green-light);
-  font-size: 1.2rem;
-  margin: 12px 0;
+  color: var(--border);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin: 16px 0;
   text-align: center;
+  font-weight: 300;
 }
 
 .menu-or {
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-style: italic;
   text-align: center;
+  margin: 2px 0;
 }
 
 .menu-price {
   text-align: center;
   font-family: var(--font-display);
-  font-size: 1.6rem;
-  color: var(--color-gold);
-  margin-top: 28px;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-separator);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid var(--border-light);
+  letter-spacing: 0.04em;
 }
 
 .menu-note {
   text-align: center;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  font-weight: 300;
   font-style: italic;
-  margin-top: 24px;
-  margin-bottom: 32px;
+  margin-top: 32px;
+  margin-bottom: 40px;
 }
 
-/* À la carte priced items */
+/* Wine pairing card accent */
+.wine-pairing {
+  border-left: 3px solid var(--wine-color);
+}
+
+/* À la carte */
 .menu-card.alacarte .menu-items {
   align-items: stretch;
 }
@@ -401,80 +496,91 @@ a:hover {
   justify-content: space-between;
   align-items: baseline;
   text-align: left;
-  padding: 10px 0;
-  border-bottom: 1px dotted var(--color-separator);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.menu-item.priced:last-child {
+  border-bottom: none;
 }
 
 .menu-item.priced .dish {
   flex: 1;
-  padding-right: 16px;
+  padding-right: 24px;
+  font-size: 1rem;
 }
 
 .menu-item.priced .price {
-  color: var(--color-gold);
-  font-weight: 500;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  font-weight: 400;
   white-space: nowrap;
-}
-
-/* Wine pairing card */
-.wine-pairing {
-  border-color: var(--color-wine);
-  border-width: 1px;
 }
 
 /* ===== Wine List ===== */
 .wine-list {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
 }
 
 .wine-category {
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
 .wine-category h3 {
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--color-gold);
-  letter-spacing: 0.06em;
-  margin-bottom: 20px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--color-green);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.wine-category h3::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: 12px;
 }
 
 .wine-category h4 {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  color: var(--color-green-light);
-  margin-top: 24px;
-  margin-bottom: 12px;
+  color: var(--text);
+  margin-top: 32px;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
 }
 
 .wine-category h5 {
-  font-size: 0.9rem;
+  font-size: 11px;
   font-weight: 500;
-  color: var(--color-text-muted);
+  color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 16px;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .wine-table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .wine-table thead th {
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 8px 0;
+  letter-spacing: 0.1em;
+  padding: 10px 0;
   text-align: right;
-  border-bottom: 1px solid var(--color-separator);
+  border-bottom: 1px solid var(--border);
 }
 
 .wine-table thead th:first-child {
@@ -482,149 +588,166 @@ a:hover {
 }
 
 .wine-table td {
-  padding: 10px 0;
-  border-bottom: 1px dotted var(--color-separator);
-  font-size: 0.92rem;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .wine-table td:first-child {
-  color: var(--color-text);
-  padding-right: 20px;
+  color: var(--text);
+  padding-right: 24px;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .wine-table td:nth-child(2),
 .wine-table td:nth-child(3) {
   text-align: right;
-  color: var(--color-gold);
+  color: var(--text-secondary);
   white-space: nowrap;
   width: 80px;
+  font-size: 13px;
 }
 
 /* ===== Info Section ===== */
 .info-section {
-  background: var(--color-surface);
-  padding: 80px 24px;
+  background: var(--bg-warm);
+  padding: 120px 32px;
 }
 
 .info-grid {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 80px;
 }
 
 .info-block h2 {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--color-gold);
-  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
 }
 
 .info-block h4 {
-  color: var(--color-green-light);
-  font-size: 0.9rem;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  margin-top: 16px;
-  margin-bottom: 4px;
+  letter-spacing: 0.12em;
+  margin-top: 24px;
+  margin-bottom: 6px;
 }
 
 .info-block p {
-  color: var(--color-text-muted);
-  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.7;
 }
 
 .info-block .small {
-  font-size: 0.85rem;
-  font-style: italic;
+  font-size: 12px;
+  color: var(--text-tertiary);
 }
 
 .info-block .address {
-  font-size: 1.05rem;
-  color: var(--color-text);
-  margin-bottom: 12px;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 16px;
+  line-height: 1.6;
 }
 
 .hours {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
-/* ===== Sections ===== */
+/* ===== Generic Sections ===== */
 .section {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
   margin: 0 auto;
-  padding: 80px 24px;
+  padding: 120px 32px;
   text-align: center;
 }
 
 .section h2 {
   font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 400;
-  color: var(--color-gold);
-  margin-bottom: 20px;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
 .section p {
-  color: var(--color-text-muted);
-  max-width: 640px;
-  margin: 0 auto 16px;
-  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 540px;
+  margin: 0 auto 20px;
+  line-height: 1.8;
 }
 
 .section .btn {
-  margin-top: 12px;
+  margin-top: 16px;
 }
 
 .alt-bg {
-  background: var(--color-bg-alt);
+  background: var(--bg-warm);
   max-width: 100%;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .alt-bg h2,
 .alt-bg p {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
   margin-left: auto;
   margin-right: auto;
 }
 
 .alt-bg p {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 /* ===== Footer ===== */
 .footer {
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-separator);
-  padding: 60px 24px 30px;
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.6);
+  padding: 80px 32px 40px;
 }
 
 .footer-grid {
-  max-width: var(--max-width);
+  max-width: var(--max-w);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 48px;
 }
 
 .footer-col h4 {
   font-family: var(--font-display);
-  color: var(--color-gold);
-  font-weight: 400;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
 }
 
 .footer-col p {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
 .footer-col ul {
@@ -632,62 +755,74 @@ a:hover {
 }
 
 .footer-col ul li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .footer-col ul a {
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+  font-weight: 300;
+  transition: color var(--transition);
 }
 
 .footer-col ul a:hover {
-  color: var(--color-gold);
+  color: #fff;
 }
 
 .newsletter-form {
   display: flex;
-  gap: 8px;
+  gap: 0;
 }
 
 .newsletter-form input {
   flex: 1;
-  padding: 10px 14px;
-  background: var(--color-bg);
-  border: 1px solid var(--color-separator);
-  border-radius: 3px;
-  color: var(--color-text);
-  font-size: 0.9rem;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-right: none;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
 }
 
 .newsletter-form input::placeholder {
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .newsletter-form button {
-  padding: 10px 20px;
-  background: var(--color-green);
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  font-size: 0.85rem;
+  padding: 12px 24px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 400;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: all var(--transition);
 }
 
 .newsletter-form button:hover {
-  background: var(--color-green-light);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }
 
 .footer-bottom {
-  max-width: var(--max-width);
-  margin: 40px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid var(--color-separator);
+  max-width: var(--max-w);
+  margin: 56px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
-  color: var(--color-text-muted);
-  font-size: 0.85rem;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.06em;
 }
 
 /* ===== Responsive ===== */
@@ -696,21 +831,29 @@ a:hover {
     display: flex;
   }
 
+  .nav-container {
+    padding: 0 24px;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
-    top: 64px;
+    top: 72px;
     left: 0;
     right: 0;
-    background: var(--color-surface);
+    background: var(--surface);
     flex-direction: column;
-    padding: 20px 24px;
-    gap: 16px;
-    border-bottom: 1px solid var(--color-separator);
+    padding: 32px 24px;
+    gap: 20px;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
   }
 
   .nav-links.open {
     display: flex;
+  }
+
+  .nav-links > li > a {
+    color: var(--text-secondary) !important;
   }
 
   .dropdown-menu {
@@ -719,6 +862,7 @@ a:hover {
     border: none;
     padding-left: 16px;
     background: transparent;
+    min-width: 0;
   }
 
   .nav-dropdown:hover .dropdown-menu {
@@ -730,45 +874,62 @@ a:hover {
   }
 
   .hero-content h1 {
-    font-size: 2.8rem;
+    font-size: 3.2rem;
+    letter-spacing: 0.18em;
   }
 
   .hero-content p {
-    font-size: 0.95rem;
+    font-size: 13px;
+  }
+
+  .menu-section {
+    padding: 80px 20px;
+  }
+
+  .menu-section > h2 {
+    font-size: 2rem;
   }
 
   .menu-card {
-    padding: 28px 20px;
+    padding: 40px 24px;
   }
 
   .menu-tabs {
-    gap: 2px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    -webkit-overflow-scrolling: touch;
   }
 
   .menu-tab {
-    padding: 10px 16px;
-    font-size: 0.75rem;
+    padding: 14px 20px;
+    font-size: 10px;
+    white-space: nowrap;
   }
 
   .info-grid {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 56px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
 
-  .wine-table td:first-child {
-    font-size: 0.85rem;
-    padding-right: 12px;
+  .section,
+  .info-section {
+    padding: 80px 24px;
   }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
   }
 
   .menu-section {
@@ -776,6 +937,10 @@ a:hover {
   }
 
   .menu-card {
-    padding: 24px 16px;
+    padding: 32px 20px;
+  }
+
+  .menu-card h3 {
+    font-size: 1.3rem;
   }
 }

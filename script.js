@@ -1,3 +1,13 @@
+// Force video autoplay
+const video = document.getElementById('heroVideo');
+if (video) {
+  video.play().catch(() => {
+    document.addEventListener('click', () => video.play(), { once: true });
+    document.addEventListener('touchstart', () => video.play(), { once: true });
+    document.addEventListener('scroll', () => video.play(), { once: true });
+  });
+}
+
 // Menu tab switching
 document.querySelectorAll('.menu-tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -15,12 +25,14 @@ const navLinks = document.getElementById('navLinks');
 
 navToggle.addEventListener('click', () => {
   navLinks.classList.toggle('open');
+  navToggle.classList.toggle('active');
 });
 
 // Close mobile nav on link click
 navLinks.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
+    navToggle.classList.remove('active');
   });
 });
 
@@ -34,12 +46,10 @@ document.querySelectorAll('.nav-dropdown > .dropdown-trigger').forEach(trigger =
   });
 });
 
-// Navbar background on scroll
+// Navbar scroll effect
+let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const navbar = document.getElementById('navbar');
-  if (window.scrollY > 50) {
-    navbar.style.background = 'rgba(15, 26, 15, 0.98)';
-  } else {
-    navbar.style.background = 'rgba(15, 26, 15, 0.92)';
-  }
+  const scrolled = window.scrollY > 80;
+  navbar.classList.toggle('scrolled', scrolled);
 });
