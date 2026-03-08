@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vækst — Restaurant Cofoco</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">Vækst</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#selskab">Selskab</a></li>
+        <li><a href="#gavekort">Gavekort</a></li>
+        <li class="nav-dropdown">
+          <a href="#" class="dropdown-trigger">Restauranter</a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Olise</a></li>
+            <li><a href="#">Donna</a></li>
+            <li><a href="#">Høst</a></li>
+            <li><a href="#" class="active">Vækst</a></li>
+            <li><a href="#">Delphine</a></li>
+            <li><a href="#">Superbon</a></li>
+            <li><a href="#">Llama</a></li>
+            <li><a href="#">Les Trois Cochons</a></li>
+            <li><a href="#">Oysters &amp; Grill</a></li>
+            <li><a href="#">Spuntino</a></li>
+            <li><a href="#">Restaurant Cofoco</a></li>
+            <li><a href="#">Scarpetta Rantzausgade</a></li>
+            <li><a href="#">Scarpetta Islands Brygge</a></li>
+            <li><a href="#">Vespa</a></li>
+            <li><a href="#">Jah Izakaya &amp; Sake Bar</a></li>
+            <li><a href="#">Posh Jah</a></li>
+            <li><a href="#">Corsa</a></li>
+            <li><a href="#">Coco Café</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section with Video -->
+  <section class="hero" id="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="film den her.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Vækst</h1>
+      <p>Beliggende i Sankt Peders Stræde, midt i det københavnske latinerkvarter, finder du Vækst. Gastronomisk tager Vækst udgangspunkt i Nordens friske grøntsager og urter, men finder også stadig glæden ved en god bøf, skaldyr eller frisk fisk.</p>
+      <a href="#" class="btn">Book et bord</a>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section class="menu-section" id="menu">
+    <h2>Vores menu</h2>
+
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-tab="frokost">Frokost</button>
+      <button class="menu-tab" data-tab="aften">Aftenmenu</button>
+      <button class="menu-tab" data-tab="vegetar">Vegetarmenu</button>
+      <button class="menu-tab" data-tab="vinkort">Vinkort</button>
+    </div>
+
+    <!-- Frokost -->
+    <div class="menu-content active" id="frokost">
+      <p class="menu-date">3. marts &ndash; 28. april 2026</p>
+
+      <!-- 3 retter -->
+      <div class="menu-card">
+        <h3>Vækst Menu &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Rimmet kammusling med agurker og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar + 95,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Torsk med grønkål, dild &amp; beurre blanc</span>
+            <span class="supplement">+125,-</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffel og brunet smør</span>
+            <span class="supplement">+ 125,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">400,-</div>
+      </div>
+
+      <!-- En Frokost 3 retter -->
+      <div class="menu-card wine-pairing">
+        <h3>En Frokost på Vækst &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Rimmet kammusling med agurker og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar + 95,-</span>
+            <span class="wine">2023 Scheuermann, Riesling, Pfalz</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Torsk med grønkål, dild &amp; beurre blanc +125,-</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffel og brunet smør + 125,-</span>
+            <span class="wine">2022 Mauro Marengo, Langhe Nebbiolo, Piemonte</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">800,-</div>
+      </div>
+
+      <!-- 4 retter -->
+      <div class="menu-card">
+        <h3>Vækst Menu &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Rimmet kammusling med agurker og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar + 95,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Torsk med grønkål, dild &amp; beurre blanc</span>
+            <span class="supplement">+125,-</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffel og brunet smør</span>
+            <span class="supplement">+ 125,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">500,-</div>
+      </div>
+
+      <!-- En Frokost 4 retter -->
+      <div class="menu-card wine-pairing">
+        <h3>En Frokost på Vækst &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Rimmet kammusling med agurker og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar + 95,-</span>
+            <span class="wine">2023 Scheuermann, Riesling, Pfalz</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+            <span class="wine">2024 Cala Niuru, Frappato &amp; Nero D&acute;Avola, Sicily</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Torsk med grønkål, dild &amp; beurre blanc +125,-</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffel og brunet smør + 125,-</span>
+            <span class="wine">2022 Mauro Marengo, Langhe Nebbiolo, Piemonte</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">1.000,-</div>
+      </div>
+
+      <!-- À la carte Frokost -->
+      <div class="menu-card alacarte">
+        <h3>À la carte</h3>
+
+        <h4>Forret</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Rimmet kammusling med agurker og stikkelsbær</span>
+            <span class="price">125,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Bagte gule beder med stikkelsbær &amp; peberrod</span>
+            <span class="price">125,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+            <span class="price">135,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Tatar af selleri med citruscreme og sprød surdej</span>
+            <span class="price">135,-</span>
+          </div>
+        </div>
+
+        <h4>Hovedret</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Torsk med grønkål, dild &amp; beurre blanc</span>
+            <span class="price">345,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+            <span class="price">275,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+            <span class="price">225,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffel og brunet smør</span>
+            <span class="price">345,-</span>
+          </div>
+        </div>
+
+        <h4>Dessert</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="price">95,-</span>
+          </div>
+        </div>
+
+        <h4>Ost</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="price">125,-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Aftenmenu -->
+    <div class="menu-content" id="aften">
+      <p class="menu-date">3. marts &ndash; 28. april 2026</p>
+
+      <div class="menu-card">
+        <h3>Vækst Menu &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Saltet Kammusling med hvide ribs og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar 95 kr,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kylling fra Hopballe med sprød selleri, trøffelcreme og brunet smør</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Stegt torsk med brændt porre, Rømørejer og Beurre Blanc sauce</span>
+            <span class="supplement">+125,-</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffelcreme og brunet smør</span>
+            <span class="supplement">+ 125,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">400,-</div>
+      </div>
+
+      <div class="menu-card wine-pairing">
+        <h3>En Aften på Vækst &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Saltet Kammusling med hvide ribs og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar 95 kr,-</span>
+            <span class="wine">2023 Scheuermann, Riesling, Pfalz</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kylling fra Hopballe med sprød selleri, trøffelcreme og brunet smør</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffelcreme og brunet smør + 125,-</span>
+            <span class="wine">2022 Mauro Marengo, Langhe Nebbiolo, Piemonte</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">800,-</div>
+      </div>
+
+      <div class="menu-card">
+        <h3>Vækst Menu &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Saltet Kammusling med hvide ribs og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar 95 kr,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kylling fra Hopballe med sprød selleri, trøffelcreme og brunet smør</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Stegt torsk med brændt porre, Rømørejer og Beurre Blanc sauce</span>
+            <span class="supplement">+125,-</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffelcreme og brunet smør</span>
+            <span class="supplement">+ 125,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">500,-</div>
+      </div>
+
+      <div class="menu-card wine-pairing">
+        <h3>En Aften på Vækst &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Saltet Kammusling med hvide ribs og stikkelsbær</span>
+            <span class="supplement">Tilføj kaviar 95 kr,-</span>
+            <span class="wine">2023 Scheuermann, Riesling, Pfalz</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+            <span class="wine">2024 Cala Niuru, Frappato &amp; Nero D&acute;Avola, Sicily</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kylling fra Hopballe med sprød selleri, trøffelcreme og brunet smør</span>
+            <span class="wine">2023 Terres du Moutherot, Chardonnay, Jura</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffelcreme og brunet smør + 125,-</span>
+            <span class="wine">2022 Mauro Marengo, Langhe Nebbiolo, Piemonte</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">1.000,-</div>
+      </div>
+
+      <p class="menu-note">Når I er mere end 7 personer, serverer vi vores faste 3-retters menu. I bestemmer selv, om vi skal servere vores 'Vækst-menu' eller 'Grøn menu' for jer.</p>
+
+      <!-- À la carte Aften -->
+      <div class="menu-card alacarte">
+        <h3>À la carte</h3>
+
+        <h4>Forret</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Saltet Kammusling med hvide ribs og stikkelsbær</span>
+            <span class="price">125,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Gule beder med ristet boghvede, syrlige urter og peberrodssauce</span>
+            <span class="price">125,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Tatar af dansk okse med citruscreme og sprød surdej</span>
+            <span class="price">135,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Tatar af selleri med citruscreme og sprød surdej</span>
+            <span class="price">135,-</span>
+          </div>
+        </div>
+
+        <h4>Hovedret</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Stegt torsk med brændt porre, Rømørejer og Beurre Blanc sauce</span>
+            <span class="price">275,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Farseret kylling med sellericreme, trøffel og brunet smør</span>
+            <span class="price">275,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+            <span class="price">225,-</span>
+          </div>
+          <div class="menu-item priced">
+            <span class="dish">Grillet Oksemørbrad med sprød selleri, trøffelcreme og brunet smør</span>
+            <span class="price">345,-</span>
+          </div>
+        </div>
+
+        <h4>Dessert</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="price">95,-</span>
+          </div>
+        </div>
+
+        <h4>Ost</h4>
+        <div class="menu-items">
+          <div class="menu-item priced">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="price">125,-</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Vegetarmenu -->
+    <div class="menu-content" id="vegetar">
+      <p class="menu-date">3. marts &ndash; 28. april 2026</p>
+
+      <div class="menu-card">
+        <h3>Grøn menu &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Gule beder med ristet boghvede, syrlige urter og peberrodssauce</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">400,-</div>
+      </div>
+
+      <div class="menu-card wine-pairing">
+        <h3>En Grøn Aften på Vækst &mdash; 3 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Gule beder med ristet boghvede, syrlige urter og peberrodssauce</span>
+            <span class="wine">2022 Domaine Goepp, Riesling, Alsace</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+            <span class="wine">NV Posca Bianca, Malvasia, Emilia-Romagna</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">800,-</div>
+      </div>
+
+      <div class="menu-card">
+        <h3>Grøn menu &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item">
+            <span class="dish">Gule beder med ristet boghvede, syrlige urter og peberrodssauce</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af selleri med citrus creme og sprød surdej</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød</span>
+            <span class="supplement">+ 30,-</span>
+          </div>
+        </div>
+        <div class="menu-price">500,-</div>
+      </div>
+
+      <div class="menu-card wine-pairing">
+        <h3>En Grøn Aften på Vækst &mdash; 4 retter</h3>
+        <div class="menu-items">
+          <div class="menu-item wine-welcome">
+            <span class="wine">NV Crément de Bourgogne, France</span>
+            <span class="dish">eller NV Blanc de Blancs Grand Cru, C. Bonville, Champagne + 45,-</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Gule beder med ristet boghvede, syrlige urter og peberrodssauce</span>
+            <span class="wine">2022 Domaine Goepp, Riesling, Alsace</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Tatar af selleri med citrus creme og sprød surdej</span>
+            <span class="wine">2024 Cala Niuru, Frappato &amp; Nero D&acute;Avola, Sicily</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Cremet perlebyg med gulerod, kejserhatte &amp; røget Vesterhavsost</span>
+            <span class="wine">NV Posca Bianca, Malvasia, Emilia-Romagna</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Havtornsorbet med chokolade, hvid te olie og saltet karamel</span>
+            <span class="wine">NV Casina Rivera, Birbet, Brachetto, Piemonte</span>
+          </div>
+          <div class="menu-or">eller</div>
+          <div class="menu-item">
+            <span class="dish">3 Arla Unika oste stikkelsbær &amp; knækbrød + 30,-</span>
+            <span class="wine">2022 Familie Vaillant, Chenin Blanc, Pin&acute;eau de Loire</span>
+          </div>
+          <div class="menu-separator">~</div>
+          <div class="menu-item">
+            <span class="dish">Kaffe, te &amp; petit four</span>
+            <span class="dish">Filtreret vand med/uden bobler ad libitum</span>
+          </div>
+        </div>
+        <div class="menu-price">1.000,-</div>
+      </div>
+
+      <p class="menu-note">Restauranten forbeholder sig retten til ændringer i menuer og priser</p>
+    </div>
+
+    <!-- Vinkort -->
+    <div class="menu-content" id="vinkort">
+      <div class="wine-list">
+
+        <!-- Mousserende -->
+        <div class="wine-category">
+          <h3>Mousserende</h3>
+          <table class="wine-table">
+            <thead>
+              <tr><th></th><th>Glas</th><th>Flaske</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>N.V. Crémant de Bourgogne, Chardonnay, Bourgogne, Frankrig</td><td>95,-</td><td>495,-</td></tr>
+              <tr><td>N.V. Grand Cru, Chardonnay, Camille Bonville, Champagne, Frankrig</td><td>140,-</td><td>825,-</td></tr>
+              <tr><td>N.V. Sainte Anné, Chardonnay, Pinot Meunier, Chartogne-Taillet, Champagne, Frankrig</td><td></td><td>900,-</td></tr>
+              <tr><td>N.V. Heraclite, Pinot noir, Stroebel, Champagne, Frankrig</td><td></td><td>1.200,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Cocktails -->
+        <div class="wine-category">
+          <h3>Cocktails</h3>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>Vækst Spritz // Hyldeblomst, Gin, Crémant, Lime</td><td colspan="2">125,-</td></tr>
+              <tr><td>Gin &amp; Tonic // Fever Tree Tonic, Gin</td><td colspan="2">125,-</td></tr>
+              <tr><td>Espresso Martini // Vodka, Kaffe likør, Espresso</td><td colspan="2">125,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Hvidvin -->
+        <div class="wine-category">
+          <h3>Hvidvin</h3>
+
+          <h4>Frankrig</h4>
+          <h5>Alsace</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>N.V. Riesling, Domaine Goepp, Heiligenstein</td><td>95,-</td><td>495,-</td></tr>
+              <tr><td>2023 Eros, Riesling, Gewürztraminer, Les Vins Pirouettes, Alsace</td><td>100,-</td><td>500,-</td></tr>
+              <tr><td>2022 Dessous de Table, Catherine Riss, Mittelberghaim</td><td></td><td>700,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Bourgogne</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 Bigotes, Chardonnay, Frédéric Cossard, Bourgogne Blanc</td><td></td><td>900,-</td></tr>
+              <tr><td>2022 Chablis, Chardonnay, Patrick Piuze, Chablis</td><td>150,-</td><td>750,-</td></tr>
+              <tr><td>2022 Les Bressandes, Chardonnay, Frédéric Cossard, Hautes-Cotes-de-Beaune</td><td></td><td>1.500,-</td></tr>
+              <tr><td>2022 Les Monsniéres, Chardonnay, Seiichi Saito, Hautes-Cotes-de-Beaune</td><td></td><td>1.300,-</td></tr>
+              <tr><td>2022 Meursault Les Clous, Chardonnay, Eric Boigelot, Meursault</td><td></td><td>1.700,-</td></tr>
+              <tr><td>2021 Combe Bazin, Chardonnay, Domaine de Chassorney, Saint-Romain</td><td></td><td>1.400,-</td></tr>
+              <tr><td>2022 Chassange Montrachet, Chardonnay, Bruno Colin, Chassange Montrachet</td><td></td><td>1.800,-</td></tr>
+              <tr><td>2022 Les Maiziéres, Chardonnay, Marthe Henry, Rully</td><td></td><td>1.650,-</td></tr>
+              <tr><td>2022 Montagny 1er Cru, Chardonnay, Domaine Jean Marc Boillot, Montagny</td><td></td><td>1.050,-</td></tr>
+              <tr><td>2020 Pouilly-Fuisse, Chardonnay, Esprit Leflaive, Pouilly-Fuisse</td><td></td><td>1.700,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Loire</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2024 Lieubeau, Sauvignon Blanc, Familie Lieubeau, Muscadet</td><td></td><td>400,-</td></tr>
+              <tr><td>2021 Faia, Chenin Blanc, Mai et Kenji Hodgson, Anjou</td><td></td><td>800,-</td></tr>
+              <tr><td>2022 Pin&acute;eau de Loire, Chenin Blanc, Familie Vaillant, Anjou</td><td>125,-</td><td>625,-</td></tr>
+              <tr><td>2021 Les Gruches, Chenin Blanc, Domaine Calvez Bobinet, Saumur</td><td></td><td>900,-</td></tr>
+              <tr><td>2023 Sancerre, Sauvignon Blanc, Paul Prieur et Fils, Sancerre</td><td>140,-</td><td>750,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Jura</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Terres du Moutherot, Chardonnay, Vin du Moutherot, Franche-Comté</td><td>130,-</td><td>650,-</td></tr>
+              <tr><td>2021 Circumstantia "MMXXI", Chardonnay, Domaine Buronfosse, Cotes-du-Jura</td><td></td><td>870,-</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Italien</h4>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2021 Mali, Malvasia blend, Nikolas Juretic, Friuli</td><td></td><td>950,-</td></tr>
+              <tr><td>2020 Granselva, Chardonnay blend, Sauro Maule, Veneto</td><td></td><td>425,-</td></tr>
+              <tr><td>N.V. Posca Bianca, Malvasia blend, Orsi, Emilia-Romagna</td><td>105,-</td><td>550,-</td></tr>
+              <tr><td>2023 Soki Soki, Zibibbo, Tanca Nica, Sicilien</td><td></td><td>950,-</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Andre</h4>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Riesling Trocken 'Green Label', Riesling, Scheuermann, Pfalz, Tyskland</td><td>90,-</td><td>400,-</td></tr>
+              <tr><td>2023 Grüner Veltliner, Weingut Ecker, Niederöstereich, Østrig</td><td>85,-</td><td>385,-</td></tr>
+              <tr><td>2023 Blanc Sense Papers, Xarello, Clandenstina, Catalonien, Spanien</td><td></td><td>700,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Rødvin -->
+        <div class="wine-category">
+          <h3>Rødvin</h3>
+
+          <h5>Alsace</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 Libre comme l&acute;air, Pinot Noir, Catherine Riss, Mittelberghaim</td><td></td><td>900,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Bourgogne</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 Les Lormes, Pinot Noir, Seiichi Saito, Bourgogne Rouge</td><td></td><td>1.200,-</td></tr>
+              <tr><td>2022 Justice, Pinot Noir, La Maison Romane, Gevrey-Chambertin</td><td></td><td>1.800,-</td></tr>
+              <tr><td>2020 Gevrey-Chambertin, Pinot Noir, Esprit Leflaive, Gevrey-Chambertin</td><td></td><td>4.000,-</td></tr>
+              <tr><td>2022 La Croix, Pinot Noir, Bernard Rion, Beaune</td><td>150,-</td><td>750,-</td></tr>
+              <tr><td>2017 Corton-Bressandes, Pinot Noir, Chandon de Briailles, Beaune</td><td></td><td>1.500,-</td></tr>
+              <tr><td>2022 Les Vignots, Pinot Noir, Marthe Henry, Pommard</td><td></td><td>3.000,-</td></tr>
+              <tr><td>2021 Sous Roche, Pinot Noir, Domaine de Chassorney, Saint-Romain</td><td></td><td>1.400,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Loire</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Villemade Rosé, Pineau d&acute;Aunis, Hervé Villemade, Vin de France</td><td>105,-</td><td>495,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Jura</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 Se Kwa Sa, Poulsard, Gamay, Domaine Buronfosse, Vin de France</td><td></td><td>700,-</td></tr>
+              <tr><td>2020 Elle Aime, Chardonnay, Pinot Noir, Octavin, Arbois</td><td></td><td>850,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Rhône</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 Crozes Hermitage, Syrah, Maison Les Alexandrins, Crozes Hermitage</td><td></td><td>575,-</td></tr>
+              <tr><td>2023 Cotes du Rhône, Grenache Noir, Syrah, Les Vignerons D&acute;Estezargues</td><td>85,-</td><td>350,-</td></tr>
+              <tr><td>2022 Chateauneuf-du-Pape, GSM-blend, Domaine de Pignan, Chateauneuf-du-Pape</td><td></td><td>700,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Languedoc</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2022 La Forge Estate, Syrah, Les Domaines Paul Mas, Aude</td><td></td><td>330,-</td></tr>
+              <tr><td>2021 Pinot Noir, Arnaud Combier, Vin de France</td><td></td><td>500,-</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Italien</h4>
+          <h5>Piemonte</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Barbera d&acute;Alba, Angelo Negro, Roero</td><td>115,-</td><td>550,-</td></tr>
+              <tr><td>2023 Langhe Rosato, Nebbiolo, Bruno Rocca</td><td></td><td>450,-</td></tr>
+              <tr><td>2023 Langhe Nebbiolo, Alessandro Salvano, Langhe</td><td></td><td>775,-</td></tr>
+              <tr><td>2021 Outside, Nebbiolo, Alessandro Salvano, Langhe</td><td></td><td>1.600,-</td></tr>
+              <tr><td>2022 Langhe Nebbiolo, Mauro Marengo, Langhe</td><td>120,-</td><td>600,-</td></tr>
+              <tr><td>2022 Dogliani, Dolcetto, Cascina Corte, Langhe</td><td></td><td>500,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Toscana</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2018 Brunello di Montalcino, Sangiovese, Tenute Silvio Nardi, Brunello di Montalcino</td><td></td><td>825,-</td></tr>
+            </tbody>
+          </table>
+
+          <h5>Sicilien</h5>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Cala Niuru, Frappato, Nero d&acute;Avola, Mortellito, IGP Terre Siciliane</td><td>90,-</td><td>400,-</td></tr>
+            </tbody>
+          </table>
+
+          <h4>Australien</h4>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>2023 Cathedral, Pinot Noir, William Downie, Victoria</td><td></td><td>600,-</td></tr>
+              <tr><td>2022 Gippsland, Pinot Noir, William Downie, Victoria</td><td></td><td>1.100,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Dessertvin -->
+        <div class="wine-category">
+          <h3>Dessertvin</h3>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>N.V. Birbet, Brachetto, Cascina Riveri, Piemonte, Italien</td><td>105,-</td><td>450,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Alkoholfri -->
+        <div class="wine-category">
+          <h3>Alkoholfri Vin &mdash; Muri</h3>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>N.V. Passing Clouds // Stikkelsbær, Jasmin</td><td>80,-</td><td>400,-</td></tr>
+              <tr><td>N.V. Fade to Black // Solbær, Kamille</td><td>80,-</td><td>400,-</td></tr>
+              <tr><td>N.V. Sherbert Daydream // Ribs, Rabarber</td><td></td><td>400,-</td></tr>
+              <tr><td>N.V. Yamille // Hindbær, Rabarber</td><td></td><td>400,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Andre drikkevarer -->
+        <div class="wine-category">
+          <h3>Andre drikkevarer</h3>
+          <table class="wine-table">
+            <tbody>
+              <tr><td>Jacobsen Yakima IPA Fadøl /// 44 cl.</td><td colspan="2">65,-</td></tr>
+              <tr><td>To Øl - 45 days Pilsner Fadøl /// 44 cl.</td><td colspan="2">65,-</td></tr>
+              <tr><td>To Øl - Snublejuice // Berry sour øl // Brokilde Blonde</td><td colspan="2">65,- / 75,-</td></tr>
+              <tr><td>To Øl (alkoholfri) - Implosion // Implosion Fruit 33cl. 0,3%</td><td colspan="2">60,-</td></tr>
+              <tr><td>Hjemmelavet saft // Homemade juice</td><td colspan="2">70,-</td></tr>
+              <tr><td>Hjemmelavet Juicemenu, 3 glas // Homemade Juice pairing, 3 glasses</td><td colspan="2">195,-</td></tr>
+              <tr><td>Sodavand</td><td colspan="2">40,-</td></tr>
+              <tr><td>Slayer espresso</td><td colspan="2">50,-</td></tr>
+              <tr><td>Te fra Sing tehus</td><td colspan="2">50,-</td></tr>
+              <tr><td>Vand ad libitum med eller uden brus &mdash; pr. pers.</td><td colspan="2">30,-</td></tr>
+              <tr><td>Avec / Spiritus</td><td colspan="2">fra 60,-</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="menu-note">Restauranten forbeholder sig retten til ændringer i menukort og priser.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="info-section" id="kontakt">
+    <div class="info-grid">
+      <div class="info-block">
+        <h2>Åbningstider</h2>
+        <div class="hours">
+          <div>
+            <h4>Frokost</h4>
+            <p>Mandag &ndash; søndag</p>
+            <p>12.00 &ndash; 14.15</p>
+          </div>
+          <div>
+            <h4>Aften</h4>
+            <p>Mandag &ndash; søndag</p>
+            <p>17.30 &ndash; 00.00</p>
+            <p class="small">Senest ankomsttid kl. 21.00</p>
+          </div>
+        </div>
+      </div>
+      <div class="info-block">
+        <h2>Kontakt</h2>
+        <p class="address">Sankt Peders Stræde 34<br>1453 København K</p>
+        <p>Tel: <a href="tel:+4538412727">+45 3841 2727</a></p>
+        <p>Email: <a href="mailto:vaekst@cofoco.dk">vaekst@cofoco.dk</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selskaber -->
+  <section class="section" id="selskab">
+    <h2>Selskaber</h2>
+    <p>De flotte omgivelser på Vækst er perfekte til et intimt bryllup eller en rund fødselsdag, i restauranten mellem de grønne planter, eller i det smukke selskabslokale med plads til op til 30 personer. Vi har plads til selskaber op til 130 personer fordelt i hele restauranten.</p>
+    <p>Vi holder frokoståbent, så du kan også booke frokostselskaber hos os. Kontakt os på <a href="mailto:vaekst@cofoco.dk">vaekst@cofoco.dk</a> for at høre mere og reservere.</p>
+  </section>
+
+  <!-- Gavekort -->
+  <section class="section alt-bg" id="gavekort">
+    <h2>Giv et gavekort til Vækst</h2>
+    <p>Giv en du holder af en oplevelse på Vækst. Med et gavekort til Vækst giver du noget at se frem til.</p>
+    <a href="#" class="btn">Køb gavekort</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Del Cofoco</h4>
+        <p>Cofoco er det vi skaber sammen. Del oplevelsen.</p>
+        <ul>
+          <li><a href="#">Bestil et gavekort</a></li>
+          <li><a href="#">Book et bord</a></li>
+          <li><a href="#">Book til selskaber</a></li>
+          <li><a href="#">Jobs</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Cofoco Social</h4>
+        <p>Få et indblik i vores hverdag og følg med, hvis du har lyst.</p>
+        <ul>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Nyhedsbrev</h4>
+        <p>Inspiration, invitationer og tilbud fra os til dig.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Din email" aria-label="Email">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Cofoco &copy; 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
